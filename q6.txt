@@ -1,0 +1,14 @@
+def increment_int_a(someval):
+    someval += 1 
+def increment_int_b(someval): 
+    someval['32'] += 1 
+def main(): 
+    a = 32 
+    increment_int_a(a)
+    
+    b = {'32':0}
+    increment_int_b(b)
+#The change inside increment_int_a does not change the variable a after the function call because integers in Python are immutable, and the function operates on a local copy of the integer.
+
+#The change inside increment_int_b does change the variable b after lthe function call because dictionaries in Python are mutable, and the function modifies the original dictionary object.
+

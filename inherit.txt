@@ -1,0 +1,4 @@
+Inheritance allows you to create a new class that inherits attributes and methods from an existing class (the base or parent class). This promotes code reusability by avoiding the need to rewrite common functionality. You can build on top of the parent class, adding new features specific to the child class while retaining the shared behavior.
+Inheritance is a fundamental concept in achieving polymorphism, where different objects can be treated as instances of a common base class. This enables you to write code that works with objects of various derived classes without needing to know their specific types. Polymorphism simplifies code and supports flexibility in handling different object types.
+
+
