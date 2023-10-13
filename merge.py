@@ -1,17 +1,39 @@
-def merge_list(list1, list2):
+def merge_lists(list1, list2):
     if not (isinstance(list1, list) and isinstance(list2, list)):
-        raise ValueError("Both inputs must be valid lists.")
+        raise TypeError("Both inputs should be lists")
 
-    merged_list = []
+    merged_list = list1 + list2
 
-    while list1 and list2:
-        if list1[0] < list2[0]:
-            merged_list.append(list1.pop(0))
-        else:
-            merged_list.append(list2.pop(0))
+    def merge_sort(arr):
+        if len(arr) <= 1:
+            return arr
 
-    merged_list.extend(list1)
-    merged_list.extend(list2)
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        left = merge_sort(left)
+        right = merge_sort(right)
+
+        return merge(left, right)
+
+    def merge(left, right):
+        result = []
+        i = j = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+
+        result.extend(left[i:])
+        result.extend(right[j:])
+        return result
+
+    merged_list = merge_sort(merged_list)
 
     return merged_list
 
